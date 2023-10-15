@@ -106,7 +106,7 @@ h1 span {
   cursor: pointer;
 }
 
-.hover.O:hover {
+.hover:hover.O {
   color: white;
 }
 

@@ -63,5 +63,7 @@ window.onload = function() {
         // Reset the status
         document.getElementById('status').innerHTML = 'Move your mouse over a square and click to play an X or an O.';
         document.getElementById('status').classList.remove('you-won');
+        // Reset the squares
+        Array.from(document.getElementById('board').children).forEach(element => element.setAttribute('class', 'square hover'));
     });
 }
