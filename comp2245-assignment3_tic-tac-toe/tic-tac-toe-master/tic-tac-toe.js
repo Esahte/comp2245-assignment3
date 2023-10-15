@@ -51,4 +51,17 @@ window.onload = function() {
             console.log(player)
         }
     });
+
+    // Add event listener to the new game button
+    document.getElementsByClassName('btn')[0].addEventListener('click', () => {
+        // Reset the game state
+        gameState = Array.from(document.getElementById('board').children).map(element => element.innerHTML = '');
+        // Reset the player
+        player = 'X';
+        // Reset the winner
+        winner = '';
+        // Reset the status
+        document.getElementById('status').innerHTML = 'Move your mouse over a square and click to play an X or an O.';
+        document.getElementById('status').classList.remove('you-won');
+    });
 }
