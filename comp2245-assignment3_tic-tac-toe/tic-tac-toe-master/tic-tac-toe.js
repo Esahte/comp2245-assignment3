@@ -3,7 +3,7 @@
 // Use onload event to ensure the DOM is loaded before running the script
 window.onload = function() {
     // Add event listener to each square
-    Array.from(document.getElementById('board').children).forEach(element => element.setAttribute('class', 'square'));
+    Array.from(document.getElementById('board').children).forEach(element => element.setAttribute('class', 'square hover'));
 
     // Create an array to keep track of the state of the game
     let gameState = Array.from(document.getElementById('board').children).map(element => element.innerHTML);
@@ -44,6 +44,7 @@ window.onload = function() {
             if (win(gameState)) {
                 winner = player;
                 document.getElementById('status').innerHTML = `Congratulations! ${winner} is the Winner!`;
+                document.getElementById('status').classList.add('you-won');
             }
             // Update the player
             player = player === 'X' ? 'O' : 'X';
